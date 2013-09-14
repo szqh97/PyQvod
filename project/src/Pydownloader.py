@@ -20,7 +20,7 @@ import pprint
 def downloadProc(url, filename):
 
     #url = u'qvod://297167808|0225CE017F36A404BF7347ED306311E8BC96C9C8|小爸爸_HDTV_01.rmvb|'
-    fname = url.split('|')[-2]
+    #fname = url.split('|')[-2]
 
     downloader.download(url, None, fname)
 
@@ -31,6 +31,10 @@ if __name__ == '__main__':
         os._exit(1)
     url = unicode(sys.argv[1])
     fname = unicode(sys.argv[2])
+    ret = downloader.valid_url(url)
+    if ret == False:
+        print ''' the url is not a valid url '''
+        os._exit(2)
     downloadProc(url, fname)
     os._exit(0)
 
