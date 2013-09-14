@@ -17,7 +17,7 @@ import pprint
 #
 #
 
-def downloadProc(url):
+def downloadProc(url, filename):
 
     #url = u'qvod://297167808|0225CE017F36A404BF7347ED306311E8BC96C9C8|小爸爸_HDTV_01.rmvb|'
     fname = url.split('|')[-2]
@@ -26,11 +26,12 @@ def downloadProc(url):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print '''usage: Pydownloader.py "qvod://297167808|0225CE017F36A404BF7347ED306311E8BC96C9C8|小爸爸_HDTV_01.rmvb|" '''
+    if len(sys.argv) != 3:
+        print '''usage: Pydownloader.py "qvod://297167808|0225CE017F36A404BF7347ED306311E8BC96C9C8|小爸爸_HDTV_01.rmvb|" "filename"'''
         os._exit(1)
     url = unicode(sys.argv[1])
-    downloadProc(url)
+    fname = unicode(sys.argv[2])
+    downloadProc(url, fname)
     os._exit(0)
 
 
