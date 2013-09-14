@@ -31,6 +31,6 @@ if __name__ == '__main__':
         os._exit(1)
     url = unicode(sys.argv[1])
     downloadProc(url)
-    os._eixt(0)
+    os._exit(0)
 
 
